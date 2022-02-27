@@ -2,25 +2,11 @@ name: Lint Angular
 
 on:
   push:
-    branches: [ main ]
+    branches: [ CI ]
 
 jobs:
-  lint:
-
+  Lint:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: web
-    strategy:
-      matrix:
-        node-version: [12.x]
-
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/cache
-      with:
-        node-version: ${{ matrix.node-version }}
-    - run: npm install
-    - run: npm ci
     - run: npm lint
