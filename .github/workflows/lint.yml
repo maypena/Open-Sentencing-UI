@@ -19,7 +19,5 @@ jobs:
       uses: actions/cache
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-        cache-dependency-path: web/package-lock.json
     - run: npm ci
     - run: npm lint
