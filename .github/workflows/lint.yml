@@ -2,13 +2,15 @@ name: Lint Angular
 
 on:
   push:
-    branches: [ CI ]
+    branches: [ main ]
 
 jobs:
   lint:
 
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: web
     strategy:
       matrix:
         node-version: [12.x]
