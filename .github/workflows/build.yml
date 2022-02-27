@@ -5,8 +5,7 @@ on:
     branches: [ CI ]
 
 jobs:
-  build:
-
+  Build:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -21,6 +20,7 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm install
+        cache: 'npm'
+    # - run: npm install
     - run: npm ci
     - run: npm run build --if-present

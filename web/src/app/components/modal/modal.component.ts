@@ -317,7 +317,7 @@ export class ModalComponent extends BaseModal implements OnInit {
       this.genderIsSelected = this.validateDefendantGender.value[0] == '';
   }
 
-  private isFormControlInvalid(formControlName: string): boolean {
+  public isFormControlInvalid(formControlName: string): boolean {
     return this.defendantAndCaseForm.get(formControlName).touched && 
       this.defendantAndCaseForm.get(formControlName).invalid;
   }
